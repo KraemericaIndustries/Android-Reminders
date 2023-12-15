@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
                 0 -> tab.text = "Passwords"
                 1 -> tab.text = "General Info"
             }
-            tab.text = "OBJECT ${(position + 1)}"
         }.attach()
     }
 
