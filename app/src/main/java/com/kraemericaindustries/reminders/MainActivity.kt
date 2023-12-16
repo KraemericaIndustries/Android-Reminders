@@ -2,6 +2,7 @@ package com.kraemericaindustries.reminders
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -20,8 +21,14 @@ class MainActivity : AppCompatActivity() {
 
         TabLayoutMediator(binding.tabLayout, binding.pager) { tab, position ->
             when(position) {
-                0 -> tab.text = "Passwords"
-                1 -> tab.text = "General Info"
+                0 -> {
+                    tab.text = "Passwords"
+                    tab.icon = AppCompatResources.getDrawable(this, R.drawable.icon_lock)
+                }
+                1 -> {
+                    tab.text = "General Info"
+                    tab.icon = AppCompatResources.getDrawable(this, R.drawable.icon_info)
+                }
             }
         }.attach()
     }
